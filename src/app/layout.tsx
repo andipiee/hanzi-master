@@ -17,12 +17,12 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main className="container">
-          <header style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2rem' }}>
+          <header className="layout-header">
             <h1 className="title">HSK Master</h1>
             <p className="subtitle">Interactive Mandarin Chinese Vocabulary</p>
           </header>
           {children}
-          <footer style={{ textAlign: 'center', marginTop: '4rem', padding: '2rem 0', color: 'var(--text-muted)', borderTop: '1px solid var(--border)' }}>
+          <footer className="layout-footer">
             <p>© {new Date().getFullYear()} HSK Master - Elevated Learning</p>
           </footer>
         </main>

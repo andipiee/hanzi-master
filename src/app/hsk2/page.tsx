@@ -12,7 +12,7 @@ const levels = [
 export default function Hsk2Page() {
     return (
         <div>
-            <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '2rem' }}>HSK 2.0 Levels</h2>
+            <h2 className="level-list-heading">HSK 2.0 Levels</h2>
             <LevelSelector levels={levels} baseRoute="hsk2" />
         </div>
     );

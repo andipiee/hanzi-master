@@ -23,44 +23,35 @@ export default async function Hsk2LevelPage({ params }: PageProps) {
 
     const words = await getVocabularyByLevel('v2', params.level);
 
+    const colorVar = `var(--hsk${params.level})`;
+
     return (
         <div>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem' }}>
-                <Link href="/hsk2" style={{ color: 'var(--text-muted)', marginRight: 'auto', textDecoration: 'none', fontWeight: 500 }}>
+            <div className="level-page-nav">
+                <Link href="/hsk2" className="level-page-back-link">
                     ← Back to HSK 2.0 Levels
                 </Link>
-                <span style={{
-                    background: colorVar,
-                    color: 'white',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '999px',
-                    fontWeight: 'bold'
-                }}>
+                <span className="level-page-badge" style={{ background: colorVar }}>
                     {words.length} Words
                 </span>
             </div>
 
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: `var(--hsk${params.level})` }}>
+            <h2 className="level-page-heading" style={{ color: colorVar }}>
                 HSK 2.0 - Level {params.level}
             </h2>
 
-            <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.2rem' }}>
-                Click on any card to reveal and hear its pronunciation.
+            <p className="level-page-description">
                 Click on any card to reveal and hear its pronunciation.
             </p>
 
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                gap: '2rem'
-            }}>
+            <div className="vocabulary-grid">
                 {words.map((word, idx) => (
                     <VocabularyCard key={word.hanzi + idx} word={word} index={idx} />
                 ))}
             </div>
 
             {words.length === 0 && (
-                <div style={{ textAlign: 'center', color: 'var(--text-muted)', marginTop: '4rem' }}>
+                <div className="level-page-empty">
                     No vocabulary found for this level.
                 </div>
             )}

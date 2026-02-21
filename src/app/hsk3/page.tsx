@@ -13,7 +13,7 @@ const levels = [
 export default function Hsk3Page() {
     return (
         <div>
-            <h2 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '2rem' }}>HSK 3.0 Levels</h2>
+            <h2 className="level-list-heading">HSK 3.0 Levels</h2>
             <LevelSelector levels={levels} baseRoute="hsk3" />
         </div>
     );
