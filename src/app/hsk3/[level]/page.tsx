@@ -11,7 +11,7 @@ interface PageProps {
 
 // Next.js static generation
 export async function generateStaticParams() {
-    return [1, 2, 3, 4, 5, 6, 7].map((level) => ({
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9].map((level) => ({
         level: level.toString(),
     }));
 }
@@ -44,7 +44,7 @@ export default async function Hsk3LevelPage({ params }: PageProps) {
             </div>
 
             <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: colorVar }}>
-                HSK 3.0 - Level {params.level === '7' ? '7-9' : params.level}
+                HSK 3.0 - Level {params.level}
             </h2>
 
             <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '1.2rem' }}>

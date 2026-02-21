@@ -23,7 +23,6 @@ export function isValidLevel(version: 'v2' | 'v3', level: string): boolean {
     if (version === 'v2') {
         return ['1', '2', '3', '4', '5', '6'].includes(level);
     } else {
-        // Fix: Added levels 8 and 9
         return ['1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(level);
     }
 }
