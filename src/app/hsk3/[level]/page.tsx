@@ -23,8 +23,8 @@ export default async function Hsk3LevelPage({ params }: PageProps) {
 
     const words = await getVocabularyByLevel('v3', params.level);
 
-    // use a generic color for level 7 since it's an advanced bundle
-    const colorVar = parseInt(params.level) <= 6 ? `var(--hsk${params.level})` : '#1e293b';
+    const levelNum = parseInt(params.level, 10);
+    const colorVar = levelNum <= 6 ? `var(--hsk${params.level})` : 'var(--hsk7)';
 
     return (
         <div>

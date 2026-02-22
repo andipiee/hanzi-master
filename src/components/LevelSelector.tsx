@@ -17,8 +17,8 @@ interface LevelSelectorProps {
 export default function LevelSelector({ levels, baseRoute }: LevelSelectorProps) {
     return (
         <div className={styles.grid}>
-            {levels.map((l) => (
-                <Link href={`/${baseRoute}/${l.level}`} key={l.level} className={styles.card} style={{ '--theme-color': l.color } as React.CSSProperties}>
+            {levels.map((l, index) => (
+                <Link href={`/${baseRoute}/${l.level}`} key={l.level} className={styles.card} style={{ '--theme-color': l.color, animationDelay: `${index * 60}ms` } as React.CSSProperties}>
                     <div className={styles.cardInner}>
                         <h2 className={styles.levelName}>{l.name}</h2>
                         <p className={styles.description}>{l.description}</p>

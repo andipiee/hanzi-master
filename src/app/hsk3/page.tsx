@@ -7,7 +7,7 @@ const levels = [
     { level: 4, name: 'HSK 4', color: 'var(--hsk4)', count: 972, description: 'Upper Intermediate' },
     { level: 5, name: 'HSK 5', color: 'var(--hsk5)', count: 1059, description: 'Advanced' },
     { level: 6, name: 'HSK 6', color: 'var(--hsk6)', count: 1123, description: 'Proficient' },
-    { level: 7, name: 'HSK 7-9', color: '#1e293b', count: 5606, description: 'Mastery' },
+    { level: 7, name: 'HSK 7-9', color: '#94a3b8', count: 5606, description: 'Mastery' },
 ];
 
 export default function Hsk3Page() {

@@ -24,12 +24,7 @@ export default function VocabularyCard({ word, index }: VocabularyCardProps) {
 
     const handleClick = () => {
         setRevealed(!revealed);
-        if (!revealed) {
-            playAudio();
-        } else {
-            // Play audio again if they click while already revealed
-            playAudio();
-        }
+        playAudio();
     };
 
     return (

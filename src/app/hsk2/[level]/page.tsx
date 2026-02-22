@@ -9,9 +9,8 @@ interface PageProps {
     };
 }
 
-// Updated: Now includes levels 8 and 9
 export async function generateStaticParams() {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9].map((level) => ({
+    return [1, 2, 3, 4, 5, 6].map((level) => ({
         level: level.toString(),
     }));
 }
