@@ -33,11 +33,11 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy to S3
         run: |
-          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }}/hsk/ --delete --exact-timestamps
+          aws s3 sync out/ s3://${{ secrets.S3_BUCKET_NAME }}/ --delete --exact-timestamps
 
       - name: Invalidate CloudFront
         run: |
