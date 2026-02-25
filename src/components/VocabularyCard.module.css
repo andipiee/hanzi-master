@@ -14,11 +14,14 @@
     min-height: 250px;
     position: relative;
     overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 250px;
 
     /* Entry animation */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 0.6s ease forwards;
+    animation-delay: calc(var(--delay-index, 0) * 50ms);
 }
 
 @keyframes fadeUp {

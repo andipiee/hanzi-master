@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import styles from './VocabularyCard.module.css';
 
 interface VocabularyCardProps {
@@ -12,13 +12,13 @@ interface VocabularyCardProps {
     index: number;
 }
 
-export default function VocabularyCard({ word, index }: VocabularyCardProps) {
+function VocabularyCard({ word, index }: VocabularyCardProps) {
     const [revealed, setRevealed] = useState(false);
 
     const playAudio = () => {
         const utterance = new SpeechSynthesisUtterance(word.hanzi);
-        utterance.lang = 'zh-CN'; // Mandarin Chinese
-        window.speechSynthesis.cancel(); // Stop any currently playing audio
+        utterance.lang = 'zh-CN';
+        window.speechSynthesis.cancel();
         window.speechSynthesis.speak(utterance);
     };
 
@@ -31,7 +31,7 @@ export default function VocabularyCard({ word, index }: VocabularyCardProps) {
         <div
             className={styles.card}
             onClick={handleClick}
-            style={{ animationDelay: `${index * 50}ms` }}
+            style={{ '--delay-index': index } as React.CSSProperties}
         >
             <div className={styles.hanzi}>{word.hanzi}</div>
             <div className={`${styles.pinyin} ${revealed ? styles.visible : ''}`}>
@@ -48,3 +48,5 @@ export default function VocabularyCard({ word, index }: VocabularyCardProps) {
         </div>
     );
 }
+
+export default memo(VocabularyCard);

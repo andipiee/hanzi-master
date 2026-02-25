@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter, Noto_Sans_SC } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const notoSansSC = Noto_Sans_SC({ subsets: ['latin'], variable: '--font-noto-sans-sc' });
 
 export const metadata: Metadata = {
   title: 'Hanzi Master | Premium Vocabulary Study Tool',
@@ -20,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.variable} ${notoSansSC.variable}`}>
         <Navbar />
         <main className="container">
           <header className="layout-header">
