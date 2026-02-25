@@ -9,7 +9,6 @@ interface PageProps {
     };
 }
 
-// Next.js static generation
 export async function generateStaticParams() {
     return [1, 2, 3, 4, 5, 6, 7, 8, 9].map((level) => ({
         level: level.toString(),
