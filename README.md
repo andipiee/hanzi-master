@@ -1,4 +1,4 @@
-# Mandarin Vocabularies
+# Hanzi Master
 
 A premium, interactive Mandarin Chinese vocabulary study tool built with **Next.js** and **TypeScript**. Covers both **HSK 2.0** (6 levels) and **HSK 3.0** (9 levels) standards with pronunciation audio powered by the Web Speech API.
 
